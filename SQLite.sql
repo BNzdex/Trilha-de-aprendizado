@@ -3,7 +3,7 @@ Id_cliente INTEGER PRIMARY KEY AUTOINCREMENT,
 nome VARCHAR(100) not NULL,
 cpf CHAR(11) NOT NULL,
 endereço VARCHAR(100) NOT NULL,
-telefone CHAR(11)
+telefone CHAR(11) NOT NULL
 );
   
   
@@ -11,7 +11,7 @@ CREATE TABLE Produtos (
 Id_produto INTEGER PRIMARY KEY AUTOINCREMENT,
 nome_produto VARCHAR(100) NOT NULL,
 quantidade INT NOT NULL,
-preco INT
+preco INT NOT NULL
  );
 
 INSERT INTO Cliente (nome,cpf,endereço, telefone)  VALUES
