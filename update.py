@@ -15,6 +15,14 @@ SET nome = ?, email = ?, telefone = ?
 WHERE Id_cliente = ?
 """, (nome, email, telefone, id_cliente))
 
+# cursor.execute("""INSERT INTO Cliente (nome, email, telefone)  VALUES
+# ('Bernardo', 'bernardoaraujo@gmail.com', '27996283448'),
+# ('Lorrany', 'lorranybarcelos@gmail.com', '27996783888'),
+# ('Maria', 'mariablabla@gmail.com', '27991287148'), 
+# ('Ivo', 'ivogabriellivio@hotmail.com', '27996265278'),
+# ('Lolo', 'loloooooo@gmail.com', '27994723448');
+# """)
+
 cursor.execute("""SELECT * FROM Cliente""")
 clientes = cursor.fetchall() # Armazena e retona o que está dentro de uma tupla
 
