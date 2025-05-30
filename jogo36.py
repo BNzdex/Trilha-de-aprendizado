@@ -5,6 +5,54 @@ def abertura():
     print("Bem vindo ao jogo de Adivinhação!")
     print("*********************************")
 
+def desenhar_dado(valor):
+    faces = {
+        1: (
+            "+-------+",
+            "|       |",
+            "|   *   |",
+            "|       |",
+            "+-------+"
+        ),
+        2: (
+            "+-------+",
+            "| *     |",
+            "|       |",
+            "|     * |",
+            "+-------+"
+        ),
+        3: (
+            "+-------+",
+            "| *     |",
+            "|   *   |",
+            "|     * |",
+            "+-------+"
+        ),
+        4: (
+            "+-------+",
+            "| *   * |",
+            "|       |",
+            "| *   * |",
+            "+-------+"
+        ),
+        5: (
+            "+-------+",
+            "| *   * |",
+            "|   *   |",
+            "| *   * |",
+            "+-------+"
+        ),
+        6: (
+            "+-------+",
+            "| *   * |",
+            "| *   * |",
+            "| *   * |",
+            "+-------+"
+        )
+    }
+    for linha in faces[valor]:
+        print(linha)
+    
 def jogar_dado():
     return random.randint(1, 6)
 
@@ -26,6 +74,7 @@ def jogar():
             valor = jogar_dado()
             pontuacao_1 += valor
             print(f"Você tirou {valor}! Nova pontuação: {pontuacao_1}")
+            desenhar_dado(valor)
         
         elif opcao1 in ["2", "NAO", "NÃO"]:
             print(f"Jogador 1 desistiu. Jogador 2 venceu com {pontuacao_2} pontos!")
@@ -48,6 +97,7 @@ def jogar():
             valor = jogar_dado()
             pontuacao_2 += valor
             print(f"Você tirou {valor}! Nova pontuação: {pontuacao_2}")
+            desenhar_dado(valor)
         
         elif escolha_2 in ["2", "NAO", "NÃO"]:
             print(f"Jogador 2 desistiu. Jogador 1 venceu com {pontuacao_1} pontos!")
@@ -66,3 +116,4 @@ def main():
     abertura()
     jogar()
 
+main()
